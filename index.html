@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard Braking Test</title>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="dashboard-header">
+    <h1>Dashboard — Braking Test</h1>
+
+    <div class="header-right">
+      <div class="filters">
+        <input type="date" id="dateFilter">
+        <select id="sesiFilter">
+          <option value="1">Sesi 1</option>
+          <option value="2">Sesi 2</option>
+          <option value="3">Sesi 3</option>
+        </select>
+        <button id="btnLoad">Load</button>
+      </div>
+
+      <div class="zoom-controls">
+        <button id="zoom-out">−</button>
+        <button id="zoom-in">+</button>
+        <button id="fullscreen">⛶</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= CHARTS ================= -->
+  <section class="grid-4-inline">
+    <div class="card">
+      <h3>Braking Distance – Dry</h3>
+      <div id="chart-bar-dry"></div>
+    </div>
+
+    <div class="card">
+      <h3>Braking Distance – Wet</h3>
+      <div id="chart-bar-wet"></div>
+    </div>
+
+    <div class="card">
+      <h3>AVG Comparison – Dry</h3>
+      <div id="chart-avg-dry"></div>
+    </div>
+
+    <div class="card">
+      <h3>AVG Comparison – Wet</h3>
+      <div id="chart-avg-wet"></div>
+    </div>
+  </section>
+
+  <!-- ================= TABLE ================= -->
+  <section class="table-wrap">
+  <h3>Detail Data (meter)</h3>
+  <table>
+    <thead>
+      <tr>
+        <th rowspan="2">Road Condition</th>
+        <th rowspan="2">Brand</th>
+        <th colspan="5">Distance</th>
+      </tr>
+      <tr>
+        <th>T1</th>
+        <th>T2</th>
+        <th>T3</th>
+        <th>T4</th>
+        <th>T5</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+</section>
+
+
+</div>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>

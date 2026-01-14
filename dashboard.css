@@ -1,0 +1,192 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+
+  /* BRAND COLORS (DO NOT CHANGE) */
+  --dunlop: #e6b800;
+  --komp: #d40000;
+}
+
+/* ================= RESET ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+}
+
+/* ================= WRAPPER ================= */
+.wrap {
+  max-width: 1400px;
+  margin: 16px auto;
+  padding: 16px 20px;
+}
+
+/* ================= HEADER ================= */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* kanan: filter + zoom */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================= FILTER ================= */
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.filters input,
+.filters select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+}
+
+.filters button {
+  padding: 6px 14px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.filters button:hover {
+  background: #111;
+}
+
+/* ================= ZOOM ================= */
+.zoom-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.zoom-controls button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 6px;
+  background: #eaeaea;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.zoom-controls button:hover {
+  background: #d5d5d5;
+}
+
+/* ================= GRID CHART (4 SEJAJAR) ================= */
+.grid-4-inline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 x 25% */
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+/* ================= CARD ================= */
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ================= TABLE ================= */
+.table-wrap {
+  background: var(--card);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.table-wrap h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead th {
+  background: #fafafa;
+  border-bottom: 2px solid #ddd;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+/* rowspan middle align */
+td[rowspan] {
+  vertical-align: middle;
+}
+
+/* ================= BRAND COLOR ================= */
+.dunlop {
+  color: var(--dunlop);
+  font-weight: 600;
+}
+
+.komp {
+  color: var(--komp);
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .grid-4-inline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .grid-4-inline {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
